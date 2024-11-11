@@ -3,10 +3,14 @@ package main
 import (
 	"fmt"
 
-	pb "github.com:gowtham4545/websocket/Go/Proto/pb"
+	pb "github.com/gowtham4545/firstgoapp/Go/Proto/pb"
 )
 
 func main() {
-	a := pb.Location{}
-	fmt.Println(a)
+	var b = float64(2.0)
+	a := pb.Location{
+		Lat: &b,
+		Lng: &b,
+	}
+	fmt.Println(&a)
 }
