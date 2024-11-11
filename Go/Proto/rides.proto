@@ -1,0 +1,28 @@
+syntax = "proto3";
+
+package rides;
+
+// Specify the Go package for the generated code
+option go_package = "Proto/pb";
+
+import "google/protobuf/timestamp.proto";
+
+message Location {
+    optional double lat = 1;
+    optional double lng = 2;
+}
+
+enum RideType{
+    UNSET = 0;
+    REGULAR=1;
+    POOL=2;
+}
+
+message StartRequest {
+    string id=1;
+    string driver_id=2;
+    Location location=3;
+    repeated string passenger_ids=4;
+    google.protobuf.Timestamp time=5;
+    RideType type=6;
+}
